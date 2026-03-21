@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="hero">
+  <h1>Security research<br>and open-source tooling.</h1>
+  <p class="hero-sub">I build tools that find vulnerabilities in CI/CD pipelines, supply chains, and cloud infrastructure. When I find something interesting, I write about it here.</p>
+</section>
+
+<section class="recent-posts">
+  <h2>Recent Research</h2>
+  {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+  <article class="post-preview">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+
+<section class="projects-preview">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    {{ range where .Site.RegularPages "Section" "projects" }}
+    <a href="{{ with .Params.repo }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}" class="project-card">
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Params.summary }}</p>
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

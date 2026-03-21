@@ -1,0 +1,40 @@
+baseURL = "https://northecho.dev/"
+languageCode = "en-us"
+title = "north-echo"
+
+[params]
+  description = "Security research and open-source tooling"
+  author = "Christopher Lusk"
+
+[[menu.main]]
+  identifier = "research"
+  name = "Research"
+  url = "/posts/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    guessSyntax = true
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

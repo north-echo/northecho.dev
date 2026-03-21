@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="post-list">
+  <h1>{{ .Title }}</h1>
+  {{ range .Pages }}
+  <article class="post-preview">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}
