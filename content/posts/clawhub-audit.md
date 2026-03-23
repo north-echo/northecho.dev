@@ -1,17 +1,17 @@
 ---
 title: "I Scanned 30,000 AI Agent Skills for Malware. Here's What I Found."
 date: 2026-03-20
-summary: "A static analysis audit of the entire ClawhHub registry using WAINGRO found 43 confirmed malicious skills — including a coordinated C2 campaign that VirusTotal rates as benign."
+summary: "A static analysis audit of the entire ClawHub registry using WAINGRO found 43 confirmed malicious skills — including a coordinated C2 campaign that VirusTotal rates as benign."
 tags: ["waingro", "supply-chain", "case-studies"]
 ---
 
-*A static analysis audit of the ClawhHub registry using WAINGRO*
+*A static analysis audit of the ClawHub registry using WAINGRO*
 
 ---
 
-In February, Bitdefender published a technical advisory documenting widespread exploitation of the OpenClaw agent skill ecosystem. They found roughly 900 malicious skills on ClawhHub — something like 17–20% of all published skills at the time — including a coordinated campaign they called "ClawHavoc" that delivered Atomic Stealer via 300+ skills.
+In February, Bitdefender published a technical advisory documenting widespread exploitation of the OpenClaw agent skill ecosystem. They found roughly 900 malicious skills on ClawHub — something like 17–20% of all published skills at the time — including a coordinated campaign they called "ClawHavoc" that delivered Atomic Stealer via 300+ skills.
 
-I read that report and had a question: what does the ecosystem look like *now*, a month later? ClawhHub has grown fast. The registry has cleared 30,000 published skills. Are the problems Bitdefender found getting better or worse? And could a purpose-built static analysis tool catch things that existing defenses miss?
+I read that report and had a question: what does the ecosystem look like *now*, a month later? ClawHub has grown fast. The registry has cleared 30,000 published skills. Are the problems Bitdefender found getting better or worse? And could a purpose-built static analysis tool catch things that existing defenses miss?
 
 So I built one, pointed it at the entire registry, and spent a week triaging the results.
 
@@ -27,7 +27,7 @@ It's open source: [github.com/north-echo/waingro](https://github.com/north-echo/
 
 ## The scan
 
-I cloned the `openclaw/skills` GitHub archive — the official mirror of every skill published to ClawhHub — and ran WAINGRO against all 30,037 skills. The scan finished in about six minutes on a ThinkCentre M720q with four parallel workers.
+I cloned the `openclaw/skills` GitHub archive — the official mirror of every skill published to ClawHub — and ran WAINGRO against all 30,037 skills. The scan finished in about six minutes on a ThinkCentre M720q with four parallel workers.
 
 The raw numbers: 263,693 total findings across all rules. That sounds dramatic, but most of it was noise. One rule alone (OBFUSC-001, which flags base64-encoded strings) produced 175,000 findings — two-thirds of the total. Tuning that rule is on my list. Strip out the noise and you're left with roughly 88,000 signal findings, of which about 5,000 were rated CRITICAL.
 
@@ -39,7 +39,7 @@ I split the work into priority tiers. Tier 1 covered the highest-confidence rule
 
 The result: **43 confirmed malicious skills** across four attack categories.
 
-That's 0.14% of the registry. Whether you read that as "reassuringly low" or "alarmingly nonzero" depends on your perspective. For context, npm averages roughly 0.01–0.02% confirmed malicious packages in academic studies of its registry. PyPI is in a similar range. ClawhHub at 0.14% is an order of magnitude higher — and this was a first pass with conservative triage. The 401 skills I marked "suspicious" but didn't fully confirm would push the number higher with more review time.
+That's 0.14% of the registry. Whether you read that as "reassuringly low" or "alarmingly nonzero" depends on your perspective. For context, npm averages roughly 0.01–0.02% confirmed malicious packages in academic studies of its registry. PyPI is in a similar range. ClawHub at 0.14% is an order of magnitude higher — and this was a first pass with conservative triage. The 401 skills I marked "suspicious" but didn't fully confirm would push the number higher with more review time.
 
 ## The headline finding
 
@@ -47,7 +47,7 @@ Twelve of the 43 malicious skills form a coordinated campaign. All twelve refere
 
 The twelve skills were distributed across ten separate author accounts — a deliberate spread to avoid single-account detection. Two accounts published multiple C2 skills each.
 
-I pulled intelligence on the C2 IP from four sources: WHOIS, VirusTotal, AbuseIPDB, and Shodan. The picture is consistent. The IP sits on a recently allocated /24 netblock registered to an offshore entity created in January 2026 — about a month after the netblock was allocated. It's geolocated to Amsterdam, runs a default Apache install with 54 unpatched CVEs, and has 97 abuse reports on file. Multiple reporters document it as an active distribution point for macOS Nova Stealer. The ClawhHub skills are one vector in what appears to be a multi-platform campaign.
+I pulled intelligence on the C2 IP from four sources: WHOIS, VirusTotal, AbuseIPDB, and Shodan. The picture is consistent. The IP sits on a recently allocated /24 netblock registered to an offshore entity created in January 2026 — about a month after the netblock was allocated. It's geolocated to Amsterdam, runs a default Apache install with 54 unpatched CVEs, and has 97 abuse reports on file. Multiple reporters document it as an active distribution point for macOS Nova Stealer. The ClawHub skills are one vector in what appears to be a multi-platform campaign.
 
 ## What VirusTotal doesn't catch
 
@@ -55,21 +55,21 @@ This is the part that surprised me most.
 
 I checked the live C2 skills against VirusTotal. Every single one came back **Benign**. Zero detections out of eight live skills checked. The C2 IP itself is flagged by 23 of 94 VT vendors when you query it directly — but VT doesn't resolve or check IP addresses embedded in the *text content* of files it scans. The IP appears as a string inside a markdown file. It's invisible to signature-based detection.
 
-ClawhHub's own moderation system did better — it flagged five of the eight live C2 skills as "Suspicious." But three were rated Benign with High Confidence, including the most-installed C2 skill in the set with 39 installs.
+ClawHub's own moderation system did better — it flagged five of the eight live C2 skills as "Suspicious." But three were rated Benign with High Confidence, including the most-installed C2 skill in the set with 39 installs.
 
 The detection comparison:
 
 | Method | C2 skills detected | Rate |
 |---|---|---|
 | WAINGRO | 12/12 | 100% |
-| ClawhHub moderation | 9/12 | 75% |
+| ClawHub moderation | 9/12 | 75% |
 | VirusTotal | 0/12 | 0% |
 
 This isn't a knock on VirusTotal — it's doing exactly what it's designed to do, which is scan for executable malware signatures. The problem is that agent skills represent a new threat surface where the malicious payload is *instructions*, not binaries. Format-aware static analysis fills that gap.
 
 ## The other findings
 
-Beyond the C2 campaign, the audit turned up three more categories of confirmed malicious skills. I'm keeping specifics redacted until ClawhHub has had time to act on the disclosure, but in aggregate:
+Beyond the C2 campaign, the audit turned up three more categories of confirmed malicious skills. I'm keeping specifics redacted until ClawHub has had time to act on the disclosure, but in aggregate:
 
 **Reverse shell payloads.** Nine skills containing direct `bash -i >& /dev/tcp/` patterns. Interestingly, an additional fourteen skills with reverse shell patterns turned out to be false positives — legitimate security tools that embed detection signatures. The TP/FP ratio on this rule underscores why automated scanning alone isn't enough; triage matters.
 
@@ -91,14 +91,14 @@ A few takeaways from the process that might be useful if you're thinking about s
 
 ## Disclosure
 
-I've submitted a detailed disclosure to ClawhHub maintainers with the full list of confirmed malicious skills, organized by threat category and severity. The disclosure includes specific skill names, author accounts, and recommended actions. I'm holding back per-skill details from this post until they've had time to review and act.
+I've submitted a detailed disclosure to ClawHub maintainers with the full list of confirmed malicious skills, organized by threat category and severity. The disclosure includes specific skill names, author accounts, and recommended actions. I'm holding back per-skill details from this post until they've had time to review and act.
 
 The WAINGRO tool and the aggregate audit data (no per-skill details) are public now:
 
 - **Tool:** [github.com/north-echo/waingro](https://github.com/north-echo/waingro)
 - **Full audit report:** Published in the repo under `research/clawhub-audit/` once disclosure clears
 
-If you're using ClawhHub skills, you can run WAINGRO against your installed skills today:
+If you're using ClawHub skills, you can run WAINGRO against your installed skills today:
 
 ```bash
 pip install waingro
