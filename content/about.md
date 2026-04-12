@@ -10,9 +10,10 @@ Outside of work, I build open-source security tooling and conduct independent vu
 
 ## Projects
 
-- **[WAINGRO](https://github.com/north-echo/waingro)** — AI agent skill security scanner. Static analysis tool that detects malicious patterns in OpenClaw/Agent Skills format skill files. Used to audit 30,000+ skills on ClawHub.
 - **[Fluxgate](https://github.com/north-echo/fluxgate)** — Static analyzer for GitHub Actions workflows. Detects the vulnerability class that enabled the Trivy supply chain compromise.
-- **[VibeShield](https://github.com/north-echo/vibeshield)** — Security taxonomy and case study framework for CI/CD supply chain incidents.
+- **[WAINGRO](https://github.com/north-echo/waingro)** — AI agent skill security scanner. Static analysis tool that detects malicious patterns in OpenClaw/Agent Skills format skill files. Used to audit 30,000+ skills on ClawHub.
+- **[REAPER](https://github.com/north-echo/reaper)** — RHEL Exploitation Audit for Privileged Endpoint Resources.
+- **[21csim](https://github.com/north-echo/21csim)** — Monte Carlo counterfactual simulator for 21st century world history (2000-2100).
 
 ## Contact
 
