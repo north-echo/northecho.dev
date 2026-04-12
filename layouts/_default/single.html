@@ -25,10 +25,16 @@
 
   <footer class="post-footer">
     {{ with .PrevInSection }}
-    <a href="{{ .RelPermalink }}" class="post-nav prev">&larr; {{ .Title }}</a>
+    <a href="{{ .RelPermalink }}" class="post-nav prev">
+      <span class="post-nav-label">&larr; Previous</span>
+      {{ .Title }}
+    </a>
     {{ end }}
     {{ with .NextInSection }}
-    <a href="{{ .RelPermalink }}" class="post-nav next">{{ .Title }} &rarr;</a>
+    <a href="{{ .RelPermalink }}" class="post-nav next">
+      <span class="post-nav-label">Next &rarr;</span>
+      {{ .Title }}
+    </a>
     {{ end }}
   </footer>
 </article>

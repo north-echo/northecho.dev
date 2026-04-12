@@ -5,7 +5,10 @@
 </section>
 
 <section class="recent-posts">
-  <h2>Recent Research</h2>
+  <div class="section-header">
+    <h2>Recent Research</h2>
+    <a href="/posts/" class="view-all">view all &rarr;</a>
+  </div>
   {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
   <article class="post-preview">
     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
