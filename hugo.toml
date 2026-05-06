@@ -24,12 +24,6 @@ title = "north-echo"
   url = "/about/"
   weight = 3
 
-[[menu.main]]
-  identifier = "disclosures"
-  name = "Disclosures"
-  url = "/disclosures/"
-  weight = 4
-
 [markup]
   [markup.highlight]
     style = "monokai"
