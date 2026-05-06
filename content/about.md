@@ -2,11 +2,7 @@
 title: "About"
 ---
 
-I'm Christopher Lusk, a Principal Product Security Engineer at Red Hat.
-
-Outside of work, I build open-source security tooling and conduct independent vulnerability research. When I find something worth sharing, I write about it here.
-
-*The views and research published here are my own and do not represent Red Hat.*
+I'm Christopher Lusk, an independent security researcher. I build open-source security tooling and dig into vulnerabilities I find along the way. When something is worth sharing, I write about it here.
 
 ## Projects
 
