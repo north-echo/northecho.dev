@@ -97,6 +97,6 @@ The tool that finds fewer things but is right more often is the tool you want va
 
 ---
 
-*Christopher Lusk is a Principal Product Security Engineer and independent security researcher operating North Echo Security Research. His work spans ICS/OT security, CI/CD supply chain vulnerabilities, container security, and vulnerability management.*
+*Christopher Lusk is an independent security researcher operating North Echo Security Research. His work spans ICS/OT security, CI/CD supply chain vulnerabilities, container security, and vulnerability management.*
 
 *Tools and projects referenced in this post are available at [github.com/north-echo](https://github.com/north-echo).*

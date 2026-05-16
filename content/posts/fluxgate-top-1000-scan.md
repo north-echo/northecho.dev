@@ -214,7 +214,7 @@ Fluxgate is open source under Apache 2.0. Scan your repos. Fix your workflows. A
 
 ---
 
-*Christopher Lusk is a Principal Product Security Engineer at Red Hat. Fluxgate is an independent open-source project. Find it at [github.com/north-echo/fluxgate](https://github.com/north-echo/fluxgate).*
+*Christopher Lusk is an independent security researcher operating North Echo Security Research. Fluxgate is an independent open-source project. Find it at [github.com/north-echo/fluxgate](https://github.com/north-echo/fluxgate).*
 
 ---
 

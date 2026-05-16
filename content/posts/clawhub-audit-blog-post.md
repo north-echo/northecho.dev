@@ -110,4 +110,4 @@ Agent skill registries are the new package managers, and they need the same secu
 
 ---
 
-*Christopher Lusk is a Principal Product Security Engineer and the author of WAINGRO. He writes at [northecho.dev](https://www.northecho.dev) and publishes tools at [github.com/north-echo](https://github.com/north-echo).*
+*Christopher Lusk is an independent security researcher and the author of WAINGRO. He writes at [northecho.dev](https://www.northecho.dev) and publishes tools at [github.com/north-echo](https://github.com/north-echo).*
