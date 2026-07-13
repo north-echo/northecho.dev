@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="post-list">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="disclosures-intro">{{ . }}</div>{{ end }}
+
+  {{ $entries := where .Pages "Params.cves" "!=" nil }}
+  {{ $entries := $entries.ByParam "disclosedDate" }}
+  {{ $entries = $entries.Reverse }}
+
+  {{ if $entries }}
+  <div class="table-scroll">
+    <table class="disclosure-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Vendor / Product</th>
+          <th>CVE(s)</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $entries }}
+        <tr>
+          <td>{{ with .Params.disclosedDate }}{{ (time.AsTime .).Format "2006-01-02" }}{{ end }}</td>
+          <td><a href="{{ .RelPermalink }}">{{ .Params.vendor }} {{ .Params.product }}</a></td>
+          <td>{{ range .Params.cves }}<span class="cve-badge">{{ .id }}</span>{{ end }}</td>
+          <td><span class="status-badge status-{{ .Params.status }}">{{ .Params.status }}</span></td>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+  {{ else }}
+  <p class="disclosures-empty">No public entries yet.</p>
+  {{ end }}
+</section>
+{{ end }}

@@ -552,6 +552,119 @@ body {
   color: var(--accent-light);
 }
 
+/* ---- Disclosures ---- */
+.disclosures-intro {
+  color: var(--fg-dim);
+  margin: 0.5rem 0 2rem;
+}
+
+.disclosures-empty {
+  color: var(--fg-dim);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.disclosure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.disclosure-table th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.disclosure-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.disclosure-table tr:hover td {
+  background: var(--bg-elevated);
+}
+
+.disclosure-table a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.disclosure-table a:hover {
+  text-decoration: underline;
+}
+
+.cve-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0.1rem 0.25rem 0.1rem 0;
+}
+
+.status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  color: var(--fg-dim);
+}
+
+.status-badge.status-fixed {
+  color: var(--accent-light);
+  border-color: var(--accent-dim);
+}
+
+.disclosure-meta {
+  margin-top: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  background: var(--bg-elevated);
+}
+
+.disclosure-meta-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+}
+
+.disclosure-meta-row > span:first-child {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-dim);
+}
+
+.disclosure-meta-row a {
+  color: var(--link);
+}
+
+.disclosure-cves span:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 640px) {
   html { font-size: 16px; }

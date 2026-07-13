@@ -1,0 +1,51 @@
+{{ define "main" }}
+<article class="post disclosure">
+  <header class="post-header">
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+      {{ with .Params.disclosedDate }}<time datetime="{{ . }}">{{ (time.AsTime .).Format "January 2, 2006" }}</time>{{ end }}
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+      <span class="reading-time">{{ .ReadingTime }} min read</span>
+    </div>
+
+    <div class="disclosure-meta">
+      <div class="disclosure-meta-row"><span>Vendor</span><span>{{ .Params.vendor }}</span></div>
+      <div class="disclosure-meta-row"><span>Product</span><span>{{ .Params.product }}</span></div>
+      {{ with .Params.caseId }}<div class="disclosure-meta-row"><span>Case</span><span>{{ . }}</span></div>{{ end }}
+      <div class="disclosure-meta-row"><span>Status</span><span class="status-badge status-{{ .Params.status }}">{{ .Params.status }}</span></div>
+      {{ with .Params.advisoryUrl }}<div class="disclosure-meta-row"><span>Advisory</span><span><a href="{{ . }}">{{ $.Params.vendor }} advisory &rarr;</a></span></div>{{ end }}
+      {{ with .Params.cves }}
+      <div class="disclosure-meta-row disclosure-cves">
+        <span>CVEs</span>
+        <span>
+          {{ range . }}<span class="cve-badge" title="{{ .title }} ({{ .cwe }})">{{ .id }}</span>{{ end }}
+        </span>
+      </div>
+      {{ end }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="post-nav prev">
+      <span class="post-nav-label">&larr; Previous</span>
+      {{ .Title }}
+    </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="post-nav next">
+      <span class="post-nav-label">Next &rarr;</span>
+      {{ .Title }}
+    </a>
+    {{ end }}
+  </footer>
+</article>
+{{ end }}
