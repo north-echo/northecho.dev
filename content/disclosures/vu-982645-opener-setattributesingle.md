@@ -17,11 +17,12 @@ cves:
 tags: ["ics", "ot", "vulnerability-disclosure", "opener", "ethernet-ip"]
 ---
 
-**Advisory ID:** NESR-2026-0002 · **CVE:** requested, pending
-**CWE:** CWE-1284 Improper Validation of Specified Quantity in Input
-**CVSS v3.1:** 8.2 — `AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L`
-**CVSS v4.0:** 8.8 — `AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:L`
-**Status:** Coordinated via CISA VINCE (lead case); consolidated CISA ICSA pending. Published by North Echo 2026-07-13.
+- **Advisory ID:** NESR-2026-0002 · **CVE:** requested, pending
+- **CWE:** CWE-1284 — Improper Validation of Specified Quantity in Input
+- **CVSS v3.1:** 8.2 — `AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:L`
+- **CVSS v4.0:** 8.8 — `AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:L`
+
+Coordinated via CISA VINCE (lead case); consolidated CISA ICSA pending. Published by North Echo 2026-07-13.
 
 ## Summary
 

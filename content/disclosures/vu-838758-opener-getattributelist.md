@@ -17,11 +17,12 @@ cves:
 tags: ["ics", "ot", "vulnerability-disclosure", "opener", "ethernet-ip"]
 ---
 
-**Advisory ID:** NESR-2026-0001 · **CVE:** requested, pending
-**CWE:** CWE-121 Stack-based Buffer Overflow
-**CVSS v3.1:** 9.1 — `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H`
-**CVSS v4.0:** 8.8 — `AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H`
-**Status:** Coordinated via CISA VINCE; consolidated CISA ICSA pending. Published by North Echo 2026-07-13.
+- **Advisory ID:** NESR-2026-0001 · **CVE:** requested, pending
+- **CWE:** CWE-121 — Stack-based Buffer Overflow
+- **CVSS v3.1:** 9.1 — `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H`
+- **CVSS v4.0:** 8.8 — `AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:H`
+
+Coordinated via CISA VINCE; consolidated CISA ICSA pending. Published by North Echo 2026-07-13.
 
 ## Summary
 
