@@ -9,8 +9,8 @@ Between April and July of 2026 we took two vulnerabilities in [OpENer](https://g
 
 The canonical, machine-linkable records are the two advisories:
 
-- VU#838758 — GetAttributeList out-of-bounds read and stack response overflow (/disclosures/vu-838758-opener-getattributelist/)
-- VU#982645 — SetAttributeSingle truncated write accepted and applied to live state (/disclosures/vu-982645-opener-setattributesingle/)
+- [VU#838758 — GetAttributeList out-of-bounds read and stack response overflow](/disclosures/vu-838758-opener-getattributelist/)
+- [VU#982645 — SetAttributeSingle truncated write accepted and applied to live state](/disclosures/vu-982645-opener-setattributesingle/)
 
 ## The two bugs
 
@@ -84,4 +84,4 @@ CVE identifiers have been requested and are pending; we'll update the advisories
 
 ---
 
-Findings reported under North Echo's coordinated disclosure practice. Advisories: VU#838758 (/disclosures/vu-838758-opener-getattributelist/) · VU#982645 (/disclosures/vu-982645-opener-setattributesingle/).
+Findings reported under North Echo's coordinated disclosure practice. Advisories: [VU#838758](/disclosures/vu-838758-opener-getattributelist/) · [VU#982645](/disclosures/vu-982645-opener-setattributesingle/).

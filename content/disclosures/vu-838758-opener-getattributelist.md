@@ -89,4 +89,4 @@ Related defects in this function were independently reported on the public OpENe
 
 - CISA VINCE VU#838758 · CVE requested (pending)
 - Related: CVE-2022-43604 / TALOS-2022-1637
-- Companion finding: VU#982645 (/disclosures/vu-982645-opener-setattributesingle/)
+- Companion finding: [VU#982645](/disclosures/vu-982645-opener-setattributesingle/)

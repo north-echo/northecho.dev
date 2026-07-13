@@ -67,4 +67,4 @@ A memory-safety issue reaching the same SetAttributeSingle decode path (out-of-b
 ## References
 
 - CISA VINCE VU#982645 · CVE requested (pending)
-- Companion finding: VU#838758 (/disclosures/vu-838758-opener-getattributelist/)
+- Companion finding: [VU#838758](/disclosures/vu-838758-opener-getattributelist/)
