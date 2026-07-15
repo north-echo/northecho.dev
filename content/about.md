@@ -8,8 +8,6 @@ I'm Christopher Lusk, an independent security researcher. I build open-source se
 
 - **[Fluxgate](https://github.com/north-echo/fluxgate)** — Static analyzer for GitHub Actions workflows. Detects the vulnerability class that enabled the Trivy supply chain compromise.
 - **[WAINGRO](https://github.com/north-echo/waingro)** — AI agent skill security scanner. Static analysis tool that detects malicious patterns in OpenClaw/Agent Skills format skill files. Used to audit 30,000+ skills on ClawHub.
-- **[REAPER](https://github.com/north-echo/reaper)** — RHEL Exploitation Audit for Privileged Endpoint Resources.
-- **[21csim](https://github.com/north-echo/21csim)** — Monte Carlo counterfactual simulator for 21st century world history (2000-2100).
 
 ## Contact
 

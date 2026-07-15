@@ -9,7 +9,7 @@ tags: ["security-research", "ai-agents", "claude-code", "codex", "vulnerability-
 
 ---
 
-I've spent the last several months building offensive security tooling almost entirely through AI coding agents. Fluxgate, ICS-POT, REAPER, CHERITTO: every one of these projects was scaffolded, iterated, and shipped with an AI agent in the terminal. For most of that time, Claude Code was my only tool. It's brilliant at architecture, it understands complex codebases, and it's genuinely fun to work with. Conversational, collaborative, and fast on its feet.
+I've spent the last several months building offensive security tooling almost entirely through AI coding agents. Fluxgate, ICS-POT, CHERITTO: every one of these projects was scaffolded, iterated, and shipped with an AI agent in the terminal. For most of that time, Claude Code was my only tool. It's brilliant at architecture, it understands complex codebases, and it's genuinely fun to work with. Conversational, collaborative, and fast on its feet.
 
 But a few weeks ago, I started using Codex CLI alongside Claude Code. And when it comes to the part of my work that matters most, actually finding vulnerabilities and deciding whether they're real, I trust Codex more. Not because it's smarter. Because it's more disciplined.
 
@@ -25,7 +25,7 @@ Codex is more methodical, more conservative, and more practical by default. It d
 
 ## Claude Code's Check-the-Box Problem
 
-Here's the pattern I've seen repeatedly across CHERITTO, REAPER, and my SSSD research: Claude Code defaults to a shallow, check-the-box, low-hanging-fruit approach when dynamically testing for flaws. It reaches for the obvious thing, reports it with confidence, and moves on.
+Here's the pattern I've seen repeatedly across CHERITTO and my SSSD research: Claude Code defaults to a shallow, check-the-box, low-hanging-fruit approach when dynamically testing for flaws. It reaches for the obvious thing, reports it with confidence, and moves on.
 
 Even when I provide foundational guidance in CLAUDE.md (be thorough, be methodical, validate findings against source code and documentation before reporting them, cross-reference designed behavior) I still find myself explicitly redirecting Claude Code during testing sessions. "Go deeper." "Don't just check the obvious path." "Actually trace this through the implementation." "Are you sure this isn't designed behavior?" These aren't occasional nudges. They're a constant part of the workflow.
 
