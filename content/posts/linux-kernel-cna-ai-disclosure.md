@@ -2,7 +2,7 @@
 title: "The Linux kernel wanted to be a CNA. They got their wish. Then AI came along."
 date: 2026-05-16
 summary: "The 2024 Linux kernel CNA created downstream consequences nobody fully anticipated — NVD enrichment strain, distribution-CNA friction, and an AI-assisted report flood. On May 15, 2026, the kernel community shipped its first comprehensive synthesized response. A reading of the new docs from the perspective of an AI-assisted researcher who shipped a patch into the same window."
-tags: ["security-research", "linux-kernel", "cve", "cna", "ai-agents", "disclosure", "policy"]
+tags: ["linux-kernel", "cna", "cve", "ai-agents", "disclosure", "policy", "security-research"]
 ---
 
 *Christopher Lusk — North Echo Security Research*

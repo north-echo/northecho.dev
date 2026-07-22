@@ -115,9 +115,9 @@ body {
 
 /* ---- Hero ---- */
 .hero {
-  padding: 4rem 0 3rem;
+  padding: 2rem 0 1.75rem;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   text-align: center;
 }
@@ -133,11 +133,11 @@ body {
 }
 
 .hero-logo {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hero-logo img {
-  max-width: 380px;
+  max-width: 250px;
   width: 100%;
   height: auto;
 }
@@ -252,16 +252,17 @@ body {
 .tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: var(--accent);
-  background: var(--tag-bg);
-  border: 1px solid var(--tag-border);
-  padding: 0.15rem 0.5rem;
-  border-radius: 3px;
-  transition: border-color 0.15s;
+  color: var(--fg-dim);
+  transition: color 0.15s;
+}
+
+.tag::before {
+  content: "#";
+  color: var(--accent-dim);
 }
 
 .post-preview:hover .tag {
-  border-color: var(--accent-dim);
+  color: var(--accent);
 }
 
 /* ---- Projects grid ---- */
@@ -684,10 +685,10 @@ body {
   }
 
   .hero {
-    padding: 3rem 0 2.5rem;
+    padding: 1.75rem 0 1.5rem;
   }
 
-  .hero-logo img { max-width: 280px; }
+  .hero-logo img { max-width: 220px; }
 
   .post-preview {
     grid-template-columns: 1fr;

@@ -2,7 +2,7 @@
 title: "Two OpENer Findings, and a Coordinated Disclosure That Almost Worked"
 date: 2026-07-13
 summary: "Two coordinated-disclosure vulnerabilities in OpENer, a widely embedded EtherNet/IP stack — a stack-based overflow and an accepted truncated write — and the two silences it took a public forcing function to break."
-tags: ["ics", "ot", "vulnerability-disclosure", "opener", "ethernet-ip", "disclosure-process"]
+tags: ["opener", "ethernet-ip", "vulnerability-disclosure", "disclosure-process", "ics", "ot"]
 ---
 
 Between April and July of 2026 we took two vulnerabilities in [OpENer](https://github.com/EIPStackGroup/OpENer) — a widely embedded open-source EtherNet/IP stack — through coordinated disclosure with CISA. This post is about both the bugs and the process, because the process is the more instructive half. Coordination worked, eventually, but only after a forcing function; and then it went quiet again at the finish line. We're publishing on the date we said we would.

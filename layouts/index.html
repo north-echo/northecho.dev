@@ -18,7 +18,7 @@
     {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
     {{ with .Params.tags }}
     <div class="tags">
-      {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+      {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
     </div>
     {{ end }}
   </article>
@@ -34,7 +34,7 @@
       <p>{{ .Params.summary }}</p>
       {{ with .Params.tags }}
       <div class="tags">
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
       </div>
       {{ end }}
     </a>

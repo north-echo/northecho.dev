@@ -2,7 +2,7 @@
 title: "Why I Trust Codex More Than Claude Code for Vulnerability Research"
 date: 2026-04-25
 summary: "A practitioner's field report comparing Codex CLI and Claude Code for vulnerability research. Claude Code excels at architecture and ideation, but Codex delivers more disciplined, trustworthy findings during active testing — with fewer false positives and less researcher time wasted on invalidation."
-tags: ["security-research", "ai-agents", "claude-code", "codex", "vulnerability-research"]
+tags: ["claude-code", "codex", "vulnerability-research", "security-research", "ai-agents"]
 ---
 
 *Christopher Lusk · North Echo Security Research · April 2026*
