@@ -712,3 +712,8 @@ body {
   .post-content a { color: #111; text-decoration: underline; }
   .post-content a::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
 }
+
+.cve-badge.ghsa-badge {
+  color: var(--fg-dim);
+  border-color: var(--border-light);
+}

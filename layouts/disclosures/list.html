@@ -14,7 +14,7 @@
         <tr>
           <th>Date</th>
           <th>Vendor / Product</th>
-          <th>CVE(s)</th>
+          <th>CVE / GHSA</th>
           <th>Status</th>
         </tr>
       </thead>
@@ -22,8 +22,14 @@
         {{ range $entries }}
         <tr>
           <td>{{ with .Params.disclosedDate }}{{ (time.AsTime .).Format "2006-01-02" }}{{ end }}</td>
-          <td><a href="{{ .RelPermalink }}">{{ .Params.vendor }} {{ .Params.product }}</a></td>
-          <td>{{ range .Params.cves }}<span class="cve-badge">{{ .id }}</span>{{ end }}</td>
+          <td>
+            {{ if .Params.externalOnly }}<a href="{{ .Params.advisoryUrl }}" target="_blank" rel="noopener">{{ .Params.vendor }} {{ .Params.product }}</a>
+            {{ else }}<a href="{{ .RelPermalink }}">{{ .Params.vendor }} {{ .Params.product }}</a>{{ end }}
+          </td>
+          <td>
+            {{ range .Params.cves }}<span class="cve-badge">{{ .id }}</span>{{ end }}
+            {{ with .Params.ghsa }}<span class="cve-badge ghsa-badge">{{ . }}</span>{{ end }}
+          </td>
           <td><span class="status-badge status-{{ .Params.status }}">{{ .Params.status }}</span></td>
         </tr>
         {{ end }}
