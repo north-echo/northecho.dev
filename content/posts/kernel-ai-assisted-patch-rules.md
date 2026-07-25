@@ -1,7 +1,6 @@
 ---
 title: "What the Linux kernel actually requires of AI-assisted patches"
 date: 2026-07-24
-draft: true
 summary: "Four documents in Documentation/process/ set the rules for LLM-assisted kernel contributions: a mandatory Assisted-by trailer with a specific format, a hard prohibition on AI signing off, changelog disclosure most people would not guess at, and a rule that AI-found security bugs are already public. Every quotation checked against source, with the commits that put each rule in the tree."
 tags: ["linux-kernel", "ai-agents", "disclosure", "policy", "security-research"]
 ---
