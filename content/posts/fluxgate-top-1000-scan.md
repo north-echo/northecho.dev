@@ -158,7 +158,7 @@ The lesson: **static analysis finds candidates, not verdicts.** Every finding ne
 
 ## The Disclosure Campaign
 
-The campaign has grown beyond the original top-1000 scan. As of this update, I've filed disclosures for 18 repositories across the original top-1000 scan, a targeted code-search scan, and a Red Hat org sweep through GitHub Security Advisories, HackerOne, Google VRP, Kubernetes HackerOne, MSRC, and direct email. Of those, 3 have been fully withdrawn and 3 downgraded after the v0.2.0 rescan revealed pre-existing defenses.
+The campaign has grown beyond the original top-1000 scan. As of this update, I've filed disclosures for 18 repositories across the original top-1000 scan, a targeted code-search scan, and a vendor-org sweep through GitHub Security Advisories, HackerOne, Google VRP, Kubernetes HackerOne, MSRC, and direct email. Of those, 3 have been fully withdrawn and 3 downgraded after the v0.2.0 rescan revealed pre-existing defenses.
 
 Each disclosure follows Fluxgate's [published disclosure protocol](https://github.com/north-echo/fluxgate/blob/main/DISCLOSURE.md): 30-day coordinated window, aggregate stats only until patches ship, no naming of unpatched repos.
 
