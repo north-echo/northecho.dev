@@ -9,6 +9,6 @@ title: "About"
 
 ## Disclosure Policy
 
-To report a vulnerability in software I maintain, email the address above; good-faith research conducted under coordinated disclosure norms will not be met with legal action from me.
+To report a vulnerability in software I maintain, email the address above. I welcome good-faith research conducted under coordinated disclosure norms.
 
 If I've contacted *you* about a vulnerability, see the [Fluxgate disclosure protocol](https://github.com/north-echo/fluxgate/blob/main/DISCLOSURE.md) for timelines and process.
