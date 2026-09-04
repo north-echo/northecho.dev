@@ -10,8 +10,10 @@ reportedDate: 2026-04-04
 disclosedDate: 2026-08-23
 advisoryUrl: "https://security.inductiveautomation.com/?tcuUid=34477620-731d-4b70-b22b-9450f9a659a3"
 cves:
-  - id: "CVE Pending"
+  - id: "CVE-2026-77393"
     title: "Low-privilege project creation leads to gateway-side script execution"
+    cvss3: 8.8
+    cvss4: 8.7
     cwe: "CWE-276 (Incorrect Default Permissions)"
 tags: ["ics", "ot", "scada", "vulnerability-disclosure", "inductive-automation", "ignition"]
 ---
@@ -76,6 +78,7 @@ Operators on 8.1.x should update to **8.1.54 or later**.
 | Apr 29 | Vendor confirms the lead finding; agrees to CVE and credit; coordinates embargo |
 | May 20 | Fix ships in **Ignition 8.1.54** |
 | Aug 22 | Vendor closes the loop; Trust Center advisory live; CVE submitted to CISA |
+| Sep 03 | **CVE-2026-77393** assigned; [CISA ICS advisory ICSA-26-246-06](https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-06) published, crediting North Echo |
 
 ## A note on the second observation
 
@@ -83,6 +86,6 @@ The same campaign also surfaced a `ModuleInvoke` RPC path where **deserializatio
 
 ## Coordination & credit
 
-This was reported and fixed under coordinated disclosure with the **Inductive Automation security team**, who handled it professionally throughout. The fix is public in **Ignition 8.1.54**, and the Inductive Automation **[Trust Center advisory](https://security.inductiveautomation.com/?tcuUid=34477620-731d-4b70-b22b-9450f9a659a3)** credits North Echo as the reporter. A CVE has been submitted to CISA for assignment; this page will be updated with the CVE ID once it is published.
+This was reported and fixed under coordinated disclosure with the **Inductive Automation security team**, who handled it professionally throughout. The fix is public in **Ignition 8.1.54**. The issue is tracked as **CVE-2026-77393** (CVSS v3.1 8.8 / v4.0 8.7), published in **[CISA ICS advisory ICSA-26-246-06](https://www.cisa.gov/news-events/ics-advisories/icsa-26-246-06)**, and the Inductive Automation **[Trust Center advisory](https://security.inductiveautomation.com/?tcuUid=34477620-731d-4b70-b22b-9450f9a659a3)** credits North Echo as the reporter.
 
 *North Echo Security Research performs independent, logic-level vulnerability research on ICS/OT and edge platforms. — [northecho.dev](https://northecho.dev)*
