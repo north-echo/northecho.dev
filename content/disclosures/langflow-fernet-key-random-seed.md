@@ -8,7 +8,7 @@ status: "fixed"
 reportedDate: 2026-03-29
 disclosedDate: 2026-08-12
 externalOnly: true
-advisoryUrl: "https://github.com/langflow-ai/langflow/security/advisories/GHSA-jxw3-mjmx-3pqm"
+advisoryUrl: "https://github.com/advisories/GHSA-jxw3-mjmx-3pqm"
 cves:
   - id: "CVE-2026-9205"
     title: "Weak Fernet key derivation via random.seed()"
