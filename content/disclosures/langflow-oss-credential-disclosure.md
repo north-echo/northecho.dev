@@ -10,6 +10,7 @@ externalOnly: true
 advisoryUrl: "https://www.cve.org/CVERecord?id=CVE-2026-7874"
 cves:
   - id: "CVE-2026-7874"
+ghsa: "GHSA-jxw3-mjmx-3pqm"
 tags: ["vulnerability-disclosure", "langflow", "credentials", "ai"]
 build:
   render: never
