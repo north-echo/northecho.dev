@@ -1,43 +1,64 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="hero-logo">
-    <img src="/img/logo-wordmark.svg" alt="North Echo Security Research">
-  </div>
+<section class="intro">
+  <p class="intro-lede">Independent security research and coordinated disclosure.</p>
+  <figure class="intro-quote">
+    <blockquote>“It is a profound and necessary truth that the deep things in science are not found because they are useful; they are found because it was possible to find them.”</blockquote>
+    <figcaption>J. Robert Oppenheimer</figcaption>
+  </figure>
 </section>
 
-<section class="recent-posts">
-  <div class="section-header">
-    <h2>Recent Research</h2>
-    <a href="/posts/" class="view-all">view all &rarr;</a>
-  </div>
-  {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
-  <article class="post-preview">
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
-    {{ with .Params.tags }}
-    <div class="tags">
-      {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
-    </div>
-    {{ end }}
-  </article>
+{{/* One chronological log: the five latest posts and the five latest
+     disclosures, merged so a burst of advisories can't crowd out posts. */}}
+{{ $posts := slice }}
+{{ range where site.RegularPages "Section" "posts" }}
+  {{ $posts = $posts | append (dict "ts" .Date.Unix "date" .Date "kind" "post" "title" .Title "url" .RelPermalink "external" false "meta" "") }}
+{{ end }}
+{{ $cves := slice }}
+{{ with site.GetPage "/disclosures" }}
+  {{ range where .Pages "Params.cves" "!=" nil }}
+    {{ $date := time.AsTime .Params.disclosedDate }}
+    {{ $ids := slice }}
+    {{ range .Params.cves }}{{ $ids = $ids | append .id }}{{ end }}
+    {{ $cve := index $ids 0 }}
+    {{ if gt (len $ids) 1 }}{{ $cve = printf "%d CVEs" (len $ids) }}{{ end }}
+    {{ $url := .RelPermalink }}
+    {{ if .Params.externalOnly }}{{ $url = .Params.advisoryUrl }}{{ end }}
+    {{ $cves = $cves | append (dict "ts" $date.Unix "date" $date "kind" "cve" "title" (replace .Title " — " ": ") "url" $url "external" (.Params.externalOnly | default false) "meta" (printf "%s · %s" $cve .Params.status)) }}
   {{ end }}
+{{ end }}
+{{ $items := (first 5 (sort $posts "ts" "desc")) | append (first 5 (sort $cves "ts" "desc")) }}
+
+<section class="latest" aria-labelledby="latest-h">
+  <div class="section-head">
+    <h2 id="latest-h">Latest</h2>
+    <span class="section-links">
+      <a href="/posts/">all posts &rarr;</a>
+      <a href="/disclosures/">all disclosures &rarr;</a>
+    </span>
+  </div>
+  <ol class="log">
+    {{ range sort $items "ts" "desc" }}
+    <li class="log-row log-{{ .kind }}">
+      <time datetime="{{ .date.Format "2006-01-02" }}">{{ .date.Format "2006-01-02" }}</time>
+      <span class="log-kind">{{ .kind }}</span>
+      <div class="log-body">
+        <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener"{{ end }}>{{ .title }}</a>
+        {{ with .meta }}<div class="log-meta">{{ . }}</div>{{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ol>
 </section>
 
-<section class="projects-preview">
-  <h2>Projects</h2>
-  <div class="project-grid">
-    {{ range where .Site.RegularPages "Section" "projects" }}
-    <a href="{{ with .Params.repo }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}" class="project-card">
-      <h3>{{ .Title }}</h3>
-      <p>{{ .Params.summary }}</p>
-      {{ with .Params.tags }}
-      <div class="tags">
-        {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
-      </div>
-      {{ end }}
-    </a>
-    {{ end }}
+<section class="tools" aria-labelledby="tools-h">
+  <div class="section-head">
+    <h2 id="tools-h">Tools</h2>
   </div>
+  {{ range (where site.RegularPages "Section" "projects").ByWeight }}
+  <div class="tool">
+    <a href="{{ with .Params.repo }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}">{{ .Title }}</a>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ end }}
 </section>
 {{ end }}

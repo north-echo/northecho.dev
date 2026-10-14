@@ -25,16 +25,10 @@ title = "north-echo"
   weight = 3
 
 [[menu.main]]
-  identifier = "standards"
-  name = "Standards"
-  url = "/standards/"
-  weight = 4
-
-[[menu.main]]
   identifier = "about"
   name = "About"
   url = "/about/"
-  weight = 5
+  weight = 4
 
 [markup]
   [markup.highlight]

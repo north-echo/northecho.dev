@@ -1,17 +1,16 @@
 {{ define "main" }}
-<section class="post-list">
+<section class="page-list">
   <h1>{{ .Title }}</h1>
-  {{ range .Pages }}
-  <article class="post-preview">
-    {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>{{ end }}
-    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
-    {{ with .Params.tags }}
-    <div class="tags">
-      {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
-    </div>
+  <ol class="log">
+    {{ range .Pages }}
+    <li class="list-row">
+      {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>{{ else }}<span></span>{{ end }}
+      <div class="log-body">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </li>
     {{ end }}
-  </article>
-  {{ end }}
+  </ol>
 </section>
 {{ end }}

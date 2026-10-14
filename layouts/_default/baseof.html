@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.author }}">
   <link rel="canonical" href="{{ .Permalink }}">
@@ -25,35 +25,31 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
+  <link rel="preload" href="/fonts/jetbrains-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-logo">
-        <img src="/img/logo-icon.svg" alt="North Echo">
-      </a>
-      <nav class="site-nav">
-        {{ range .Site.Menus.main }}
-          <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
-        {{ end }}
-      </nav>
-    </div>
+  <header class="site-header container">
+    <a href="/" class="site-name">north echo</a>
+    <nav class="site-nav" aria-label="Main">
+      {{ range .Site.Menus.main }}
+        {{ $active := or ($.IsMenuCurrent "main" .) (eq $.RelPermalink .URL) (eq (printf "/%s/" $.Section) .URL) }}
+        <a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </nav>
   </header>
 
   <main class="container">
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="https://github.com/north-echo">GitHub</a>
-        <span class="sep">/</span>
-        <a href="/posts/index.xml">RSS</a>
-      </div>
-      <p class="copyright">&copy; {{ now.Year }} Christopher Lusk. Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
-    </div>
+  <footer class="site-footer container">
+    <span>&copy; {{ now.Year }} Christopher Lusk · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+    <span class="footer-links">
+      <a href="/standards/">standards</a>
+      <a href="https://github.com/north-echo">github</a>
+      <a href="/posts/index.xml">rss</a>
+    </span>
   </footer>
 </body>
 </html>
