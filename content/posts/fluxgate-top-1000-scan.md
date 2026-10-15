@@ -2,7 +2,7 @@
 title: "I Scanned 1,000 of GitHub's Most-Starred Repos for the Vulnerability That Took Down Trivy. Here's What I Got Wrong."
 date: 2026-03-21
 lastmod: 2026-03-22
-summary: "Fluxgate found 12–14 confirmed-exploitable pwn request vulnerabilities across the top 1,000 most-starred repositories on GitHub — and I had to retract several disclosures when my scanner's blind spots led me to overstate the severity."
+summary: "Fluxgate found 12–14 confirmed-exploitable pwn request vulnerabilities across the top 1,000 most-starred repositories on GitHub, and I had to retract several disclosures when my scanner's blind spots led me to overstate the severity."
 tags: ["fluxgate", "github-actions", "supply-chain", "disclosure"]
 ---
 
