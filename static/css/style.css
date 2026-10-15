@@ -76,10 +76,9 @@ a:hover { color: var(--accent-light); }
 }
 
 .site-name {
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg-bright);
 }
 
 .site-nav {
@@ -108,7 +107,7 @@ a:hover { color: var(--accent-light); }
 .section-head h2,
 .page-list h1 {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -121,7 +120,7 @@ a:hover { color: var(--accent-light); }
   display: flex;
   gap: 1rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
 }
 
 .section-links a { color: var(--fg-dim); }
@@ -144,15 +143,14 @@ a:hover { color: var(--accent-light); }
 }
 
 .intro-quote blockquote {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  font-style: italic;
 }
 
 .intro-quote figcaption {
   margin-top: 0.5rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--fg-dim);
 }
 
@@ -180,30 +178,22 @@ a:hover { color: var(--accent-light); }
 .list-row time,
 .log-kind {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: var(--fg-dim);
 }
 
-.log-kind { font-size: 0.7rem; color: var(--fg); }
+.log-kind { color: var(--fg); }
 .log-cve .log-kind { color: var(--accent); }
 
 .log-body > a {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
 }
-
-.log-cve .log-body > a {
-  font-size: 0.88rem;
-  font-weight: 400;
-  color: var(--fg);
-}
-
-.log-cve .log-body > a:hover { color: var(--accent-light); }
 
 .log-meta {
   margin-top: 0.1rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--fg-dim);
 }
 
@@ -245,7 +235,7 @@ a:hover { color: var(--accent-light); }
 .post-meta {
   margin-top: 0.8rem;
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: var(--fg-dim);
 }
 
@@ -338,7 +328,7 @@ a:hover { color: var(--accent-light); }
 
 .post-content th {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -391,7 +381,7 @@ a:hover { color: var(--accent-light); }
 .post-nav span {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--fg-dim);
 }
 
@@ -407,7 +397,7 @@ a:hover { color: var(--accent-light); }
   padding: 1.4rem 0 2.8rem;
   border-top: 1px solid var(--border);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--fg-dim);
 }
 
@@ -438,7 +428,7 @@ a:hover { color: var(--accent-light); }
 
 .disclosure-table th {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -457,7 +447,7 @@ a:hover { color: var(--accent-light); }
 
 .disclosure-table td:first-child {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   color: var(--fg-dim);
   white-space: nowrap;
 }
@@ -466,7 +456,7 @@ a:hover { color: var(--accent-light); }
 
 .cve-badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   color: var(--accent);
   border: 1px solid var(--border-light);
   padding: 0.1rem 0.45rem;
@@ -480,7 +470,7 @@ a:hover { color: var(--accent-light); }
 
 .status-badge {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--fg-dim);
 }
 
@@ -502,7 +492,7 @@ a:hover { color: var(--accent-light); }
 
 .disclosure-meta-row > span:first-child {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   text-transform: lowercase;
   color: var(--fg-dim);
   padding-top: 0.15rem;
