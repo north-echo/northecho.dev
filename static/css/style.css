@@ -3,22 +3,6 @@
    Dark, minimal, one accent. Content first.
    ============================================================ */
 
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --bg:          #0a0a0f;
   --bg-elevated: #111118;
@@ -31,7 +15,7 @@
   --link-dim:    rgba(196, 181, 253, 0.35);
   --border:      #1c1c28;
   --border-light:#2a2a3a;
-  --font-mono:   "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono:   ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --font-body:   -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --max-width:   680px;
 }
