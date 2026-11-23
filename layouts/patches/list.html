@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="page-list">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="disclosures-intro">{{ . }}</div>{{ end }}
+
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="patch-entry">
+    <h2>{{ .Title }}</h2>
+    <p class="patch-meta">
+      {{ range .Params.cves }}<span class="cve-badge">{{ . }}</span>{{ else }}<span class="cve-badge ghsa-badge">No CVE</span>{{ end }}
+      {{- with .Params.kind }} · {{ . }}{{ end }}
+      {{- with .Params.merged }} · {{ . }}{{ end }}
+    </p>
+    <div class="post-content">{{ .Content }}</div>
+    {{ with .Params.links }}
+    <p class="patch-links">
+      {{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" target="_blank" rel="noopener">{{ $l.name }}</a>{{ end }}
+    </p>
+    {{ end }}
+  </article>
+  {{ else }}
+  <p class="disclosures-empty">No public entries yet.</p>
+  {{ end }}
+</section>
+{{ end }}

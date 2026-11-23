@@ -511,6 +511,42 @@ a:hover { color: var(--accent-light); }
   gap: 0.25rem;
 }
 
+/* ---- Upstream patches ---- */
+.patch-entry {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.patch-entry:first-of-type { border-top: 1px solid var(--border); }
+
+.patch-entry h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg-bright);
+}
+
+.patch-meta {
+  margin: 0.5rem 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+}
+
+.patch-entry .post-content p { margin-bottom: 0.9rem; }
+
+.patch-links {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+}
+
+.patch-links a {
+  color: var(--accent-light);
+  text-decoration: underline;
+  text-decoration-color: var(--link-dim);
+  text-underline-offset: 3px;
+}
+
 /* ---- Small screens ---- */
 @media (max-width: 640px) {
   html { font-size: 16px; }
