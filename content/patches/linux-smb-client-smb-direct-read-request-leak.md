@@ -3,7 +3,7 @@ title: "Linux kernel SMB client: request-buffer leak on SMB Direct reads"
 date: 2026-07-29T22:00:17Z
 summary: "smb2_new_read_req() leaked its request buffer when RDMA memory registration failed."
 cves: ["CVE-2026-90125"]
-kind: "memory leak"
+fixType: "memory leak"
 merged: "merged in Linux 7.3"
 links:
   - name: "CVE record"

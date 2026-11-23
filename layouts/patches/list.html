@@ -8,7 +8,7 @@
     <h2>{{ .Title }}</h2>
     <p class="patch-meta">
       {{ range .Params.cves }}<span class="cve-badge">{{ . }}</span>{{ else }}<span class="cve-badge ghsa-badge">No CVE</span>{{ end }}
-      {{- with .Params.kind }} · {{ . }}{{ end }}
+      {{- with .Params.fixType }} · {{ . }}{{ end }}
       {{- with .Params.merged }} · {{ . }}{{ end }}
     </p>
     <div class="post-content">{{ .Content }}</div>

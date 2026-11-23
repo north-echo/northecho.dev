@@ -2,7 +2,7 @@
 title: "Linux kernel SMB client: read retries skipped their back-off"
 date: 2026-07-29T19:20:02Z
 summary: "The read send-error retry path never set the replay flag, so retries skipped their back-off."
-kind: "reliability fix"
+fixType: "reliability fix"
 merged: "merged in Linux 7.3"
 links:
   - name: "Fix commit"
